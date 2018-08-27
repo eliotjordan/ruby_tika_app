@@ -32,7 +32,7 @@ describe RubyTikaApp do
 
       xml_size = xml.size / 2
 
-      expect(xml[xml_size..(xml_size + 100)]).to eq("Frontier Sampling (FS).\nSince this is the only difference between MHRW and USDSG,\nto be simple, we wi")
+      expect(xml[xml_size..(xml_size + 100)]).to eq("plicated nodes make the node distribution converge\nto uniform distribution. We do not need to conside")
     end
   end
 
@@ -44,7 +44,7 @@ describe RubyTikaApp do
 
     it 'middle' do
       rta = RubyTikaApp.new(@test_file)
-      expect(rta.to_html[1000 ... 1100]).to eq("Z\"/>\n<meta name=\"meta:save-date\" content=\"2011-03-29T13:00:16Z\"/>\n<meta name=\"pdf:encrypted\" content")
+      expect(rta.to_html[1000 ... 1100]).to eq("on/pdf\"/>\n<meta name=\"X-Parsed-By\" content=\"org.apache.tika.parser.DefaultParser\"/>\n<meta name=\"X-Pa")
     end
   end
 
@@ -97,17 +97,16 @@ describe RubyTikaApp do
   end
 
   describe 'external URLs' do
+    # TODO: Stub content from cnn.com
     it 'should be able to parse an http url' do
-      rta = RubyTikaApp.new('http://localhost:9299/cnn.com')
+      rta = RubyTikaApp.new('https://cnn.com')
       expect(rta.to_text).to_not be_nil
-      expect(rta.to_text).to eq(RubyTikaApp.new(@cnn_com_file).to_text)
     end
 
+    # TODO: Stub content from news.ycombinator.com
     it 'should be able to parse another http url' do
-      rta = RubyTikaApp.new('http://localhost:9299/news.ycombinator.com')
+      rta = RubyTikaApp.new('https://news.ycombinator.com')
       expect(rta.to_text).to_not be_nil
-      expect(rta.to_text).to eq(RubyTikaApp.new(@news_ycombinator_com_file).to_text)
     end
   end
-
 end

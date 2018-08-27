@@ -24,7 +24,7 @@ class RubyTikaApp
 
     java_cmd = 'java'
     java_args = '-server -Djava.awt.headless=true'
-    tika_path = "#{File.join(File.dirname(__FILE__))}/../ext/tika-app-1.14.jar"
+    tika_path = "#{File.join(File.dirname(__FILE__))}/../ext/tika-app-1.10.jar"
 
     @tika_cmd = "#{java_cmd} #{java_args} -jar '#{tika_path}'"
   end
@@ -78,5 +78,4 @@ class RubyTikaApp
   def strip_stderr(s)
     s.gsub(/^(info|warn) - .*$/i, '').strip
   end
-
 end
