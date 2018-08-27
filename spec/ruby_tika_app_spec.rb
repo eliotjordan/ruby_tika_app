@@ -97,17 +97,16 @@ describe RubyTikaApp do
   end
 
   describe 'external URLs' do
+    # TODO: Stub content from cnn.com
     it 'should be able to parse an http url' do
-      rta = RubyTikaApp.new('http://localhost:9299/cnn.com')
+      rta = RubyTikaApp.new('https://cnn.com')
       expect(rta.to_text).to_not be_nil
-      expect(rta.to_text).to eq(RubyTikaApp.new(@cnn_com_file).to_text)
     end
 
+    # TODO: Stub content from news.ycombinator.com
     it 'should be able to parse another http url' do
-      rta = RubyTikaApp.new('http://localhost:9299/news.ycombinator.com')
+      rta = RubyTikaApp.new('https://news.ycombinator.com')
       expect(rta.to_text).to_not be_nil
-      expect(rta.to_text).to eq(RubyTikaApp.new(@news_ycombinator_com_file).to_text)
     end
   end
-
 end
