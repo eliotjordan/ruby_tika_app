@@ -20,14 +20,15 @@ Gem::Specification.new do |s|
   s.executables   = `git ls-files -- bin/*`.split("\n").map { |f| File.basename(f) }
   s.require_paths = %w[lib]
 
-  s.add_runtime_dependency('open4')
+  s.add_runtime_dependency 'open4'
 
-  s.add_development_dependency('bundler', '>= 1.0.15')
-  s.add_development_dependency('json')
-  s.add_development_dependency('pry')
-  s.add_development_dependency('rake')
-  s.add_development_dependency('rspec', '~> 3.3.0')
-  s.add_development_dependency('rubocop')
-  s.add_development_dependency('simplecov')
-  s.add_development_dependency('stub_server')
+  s.add_development_dependency 'bundler', '>= 1.0.15'
+  s.add_development_dependency 'coveralls'
+  s.add_development_dependency 'json'
+  s.add_development_dependency 'pry'
+  s.add_development_dependency 'rake'
+  s.add_development_dependency 'rspec', '~> 3.3.0'
+  s.add_development_dependency 'rubocop'
+  s.add_development_dependency 'simplecov'
+  s.add_development_dependency 'stub_server'
 end

@@ -1,7 +1,17 @@
 # frozen_string_literal: true
 
 require 'simplecov'
-SimpleCov.start
+require 'coveralls'
+
+SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new(
+  [
+    SimpleCov::Formatter::HTMLFormatter,
+    Coveralls::SimpleCov::Formatter
+  ]
+)
+SimpleCov.start do
+  add_filter '/spec'
+end
 
 require 'rubygems'
 require 'bundler/setup'
