@@ -4,7 +4,7 @@ jobs:
   build:
     working_directory: ~/tika
     docker:
-      - image: circleci/ruby:2.3.7
+      - image: circleci/ruby:2.3.7-browsers
         environment:
           RAILS_ENV: test
     steps:
@@ -27,7 +27,7 @@ jobs:
   test:
     working_directory: ~/tika
     docker:
-      - image: circleci/ruby:2.3.7
+      - image: circleci/ruby:2.3.7-browsers
         environment:
           RAILS_ENV: test
     steps:
@@ -39,7 +39,7 @@ jobs:
   rubocop:
     working_directory: ~/tika
     docker:
-      - image: circleci/ruby:2.3.7
+      - image: circleci/ruby:2.3.7-browsers
         environment:
           RAILS_ENV: test
     steps:
@@ -47,7 +47,7 @@ jobs:
           at: '~/tika'
       # Bundle install dependencies
       - run: bundle install --path vendor/bundle
-      - run: bundle exec rake rubocop
+      - run: bundle exec rubocop
 workflows:
   version: 2
   build_accept_deploy:
