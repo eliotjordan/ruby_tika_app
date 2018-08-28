@@ -1,4 +1,8 @@
-## Ruby Tika Parser
+Ruby Tika Parser
+======
+
+[![CircleCI](https://circleci.com/gh/eliotjordan/ruby_tika_app.svg?style=svg)](https://circleci.com/gh/eliotjordan/ruby_tika_app)
+[![Coverage Status](https://coveralls.io/repos/github/eliotjordan/ruby_tika_app/badge.svg)](https://coveralls.io/github/eliotjordan/ruby_tika_app)
 
 ### Introduction
 
