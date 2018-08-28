@@ -3,6 +3,7 @@ AllCops:
   TargetRubyVersion: 2.3
   Exclude:
     - 'ext/*'
+    - 'vendor/**/*'
 
 Metrics/AbcSize:
   Enabled: true
